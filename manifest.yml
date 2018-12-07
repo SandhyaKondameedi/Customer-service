@@ -1,0 +1,15 @@
+applications:
+- name: customer-service
+  path: target/customer-0.0.1-SNAPSHOT.jar
+  memory: 1G
+  instances: 1
+  random-route: true
+  services:
+  - service-registry
+  - config-server1
+  
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: https://eureka-04351a5b-c98f-4d61-b661-a8f2c67cf8ac.cfapps.io/
+
